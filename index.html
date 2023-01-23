@@ -1,21 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Phase 1 Group Project</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <meta charset="utf-8" />
+    <title>Group Project 1</title>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <!--  -->
-    <main>
-        <h1>Predict Me!</h1>
-        <div id = "search bar">
-            <input type="text" placeholder="Search..." id="search">
-        </div>  
-    </main>
-	<script src="index.js"></script>
+    <h1>Predict Me!</h1>
+    <div id="who">
+      <img
+        src="https://media.makeameme.org/created/do-you-even-80tqk6.jpg"
+        alt="who-header"
+      />
+    </div>
+
+    <div class="container" style="display: block;">
+      <form class="add-toy-form">
+        <h3>Find out who you are!</h3>
+
+        <input
+          type="text"
+          name="name"
+          value=""
+          placeholder="Enter your name..."
+          class="input-text"
+        />
+        <br />
+        <input
+          type="submit"
+          name="submit"
+          value="Send it!"
+          class="submit"
+        />
+      </form>
+    </div>
+    <p style="text-align:center">
+      Curious ?! <button id="new-name">Enter your name!</button>
+    </p>
+
+    <div>
+      <!-- add something here -->
+    </div>
+    <script type="text/javascript" src="src/index.js"></script>
   </body>
 </html>
