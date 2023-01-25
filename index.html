@@ -12,34 +12,38 @@
       <img class="logo" src="assets/predictMeLogo.png" />
 
       <!-- About the App-->
-      <div class="about-the-app">
+      <div id="about-the-app">
         <p>Predict Me! is returns the predicted age of a person based on their name and provides some interesting background information.</p>
       </div>
 
+      <div id="search-form" class="search-form">
+        <form id="name-search-form" class="name-search-form">
+          <input
+            class="name-search-input"
+            type="text"
+            name="name search"
+            id="name-search"
+            placeholder="Enter a name"
+          />
+          <button class="search-button" type="submit">Predict Me!</button>
+        </form>
+      </div>
+
       <!-- Name fact card(s) -->
-      <div class="name-information-cards-container">
-        <div class="name-information-card">
-          <form id="name-search-form" class="name-search-form">
-            <input
-              class="name-search-input"
-              type="text"
-              name="name search"
-              id="name-search"
-              placeholder="Enter a name"
-            />
-            <button class="search-button" type="submit">Predict Me!</button>
-          </form>
+      <div id="name-information-cards-container" class="hide">
+        <div id="name-predictions-card" class="name-information-cards">
           <h2 id="card-title" class="title">(Submitted Name Goes Here)</h2>
-          <ul id="facts-list" class="facts">
-            <li>Predicted Age: <span id="age-prediction" style="color:red">submit your name to find out</span></li>
+          <ul id="predictions-list" class="facts">
+            <li id="predicted-age-sentence">Predicted Age: <span id="age-prediction" style="color:red">submit your name to find out</span></li>
             <li>Number of times name is counted in database: <span id="name-count" style="color:red">0</span></li>
           </ul>
         </div>
-      </div>
-      <div class="behind-the-name">
-        <!-- about behindthe name -->
-        <div>
-          <ul id="name-usage-languages"></ul>
+        <div id="behind-the-name" class="name-information-cards">
+          <!-- about behindthe name -->
+          <p>What's behind your name?</p>
+          <div>
+            <ul id="name-usage-languages"></ul>
+          </div>
         </div>
       </div>
     </div>

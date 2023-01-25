@@ -23,22 +23,30 @@
   
   .name-information-cards-container {
     width: 100%;
-    display: flex;
-    justify-content: center;
   }
   
-  .about-the-app {
+  #about-the-app {
     width: 300px;
     display: flex;
-    border: 2px solid #000000;
+    border-top: 2px solid #000000;
+    border-left: 2px solid #000000;
+    border-right: 2px solid #000000;
     border-radius: 2px;
     background-color: white;
   }
 
-  .name-information-card {
+  #search-form {
     width: 300px;
-    border: 2px solid #000000;
-    border-radius: 2px;
+    display: flex;
+    border-left: 2px solid #000000;
+    border-right: 2px solid #000000;
+    border-bottom: 1px solid #000000;
+  }
+
+  .name-information-cards {
+    width: 300px;
+    border: 1px solid #000000;
+    border-radius: 1px;
     text-align: left;
     background-color: white;
   }
@@ -104,4 +112,8 @@
   
   .search-button:focus {
     outline: none;
+  }
+
+  .hide {
+    display:none;
   }
