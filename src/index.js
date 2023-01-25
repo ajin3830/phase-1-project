@@ -1,5 +1,7 @@
-const searchedname = document.querySelector("#card-title");
-const predictedage = document.querySelector("#predicted-age")
+const searchedName = document.querySelector("#card-title");
+const predictedAge = document.querySelector("#age-prediction")
+const nameCount = document.querySelector("#name-count");
+const nameUsageLang = document.querySelector("#name-usage-languages");
 
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('form').addEventListener('submit', (e) => {
@@ -7,18 +9,27 @@ document.addEventListener("DOMContentLoaded", () => {
     //     let submittedname = e.
         fetchAgify(e.target["name-search"].value)
         fetchBehindName(e.target["name-search"].value)
-        console.log(e);
-    
     });
 });
 
  function fetchAgify(submittedName) {
     fetch(`https://api.agify.io?name=${submittedName}`)
     .then(response => response.json())
-    .then(data => console.log(data))
- 
+    .then(data => renderAgify(data))
  }
- 
+  
+function renderAgify(data) {
+    
+    // const predictedAge = document.querySelector("#facts-list > li:nth-child(1)")
+    searchedName.textContent = data.name
+    predictedAge.textContent = data.age
+    nameCount.textContent = data.count
+    // console.log(searchedName)
+    // console.log(predictedAge)
+    console.log(nameCount)
+    // console.log(data)
+}
+
  function fetchBehindName(submittedName) {
      fetch(`https://www.behindthename.com/api/lookup.json?name=${submittedName}&key=ju257858736`)
     .then(resp => resp.json())
@@ -26,15 +37,36 @@ document.addEventListener("DOMContentLoaded", () => {
  }
 
  function renderBehindName(data) {
-    let usageLang = []
+    // let usageLang = []
     data.forEach( name => {
         const usages = name.usages.map(usage => usage.usage_full)
         console.log(usages)
-        usages.forEach( usage => usageLang.push(usage))
-    })
-    console.log(usageLang)
+        // usages.forEach( usage => usageLang.push(usage))
+        usages.forEach(usage => {
+            const li = document.createElement('li')
+            li.textContent = usage
+            nameUsageLang.appendChild(li)
+        })
 
- }
+    })
+}       
+
+
+        // function renderLangList(usageLang) {
+        //     // console.log(usageLang)
+        //     usageLang.forEach( language => {
+        //     })
+        // }
+        // renderLangList(usageLang)
+
+    
+    // console.log(usageLang)
+
+
+    // console.log()
+    // function usageLangToList(usageLang) {
+    //     console.log(usageLangToList())
+    // }
 
 // function renderBehindName(data) {
     
