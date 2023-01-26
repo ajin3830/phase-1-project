@@ -13,7 +13,7 @@
 
       <!-- About the App-->
       <div id="about-the-app">
-        <p>Predict Me! is returns the predicted age of a person based on their name and provides some interesting background information.</p>
+        <h2 class="title">Predict Me! returns the predicted age of a person based on their name and provides some interesting background information.</h2>
       </div>
 
       <div id="search-form" class="search-form">
@@ -26,6 +26,7 @@
             placeholder="Enter a name"
           />
           <button class="search-button" type="submit">Predict Me!</button>
+          <audio src ="assets/Sound_Effect_(Swoosh).mp3"></audio>
         </form>
       </div>
 
@@ -34,13 +35,13 @@
         <div id="name-predictions-card" class="name-information-cards">
           <h2 id="card-title" class="title">(Submitted Name Goes Here)</h2>
           <ul id="predictions-list" class="facts">
-            <li id="predicted-age-sentence">Predicted Age: <span id="age-prediction" style="color:red">submit your name to find out</span></li>
-            <li>Number of times name is counted in database: <span id="name-count" style="color:red">0</span></li>
+            <li id="predicted-age-sentence">Predicted Age: <span class="api-data" id="age-prediction" >submit your name to find out</span></li>
+            <li>Number of times name is counted in database: <span class="api-data" id="name-count" >0</span></li>
           </ul>
         </div>
         <div id="behind-the-name" class="name-information-cards">
-          <!-- about behindthe name -->
-          <p>What's behind your name?</p>
+          <!-- about behind the name -->
+          <h2 class="title">What's behind your name?</h2>
           <div>
             <ul id="name-usage-languages"></ul>
           </div>

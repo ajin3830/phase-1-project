@@ -6,6 +6,7 @@ const predictedAgeSentence = document.querySelector("#predicted-age-sentence");
 //let displayDivs= false;
 const behindNameDiv = document.querySelector(".hide");
 const behindNameShow = document.querySelector(".name-information-cards");
+const audio = document.querySelector("audio");
 
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('form').addEventListener('submit', (e) => {
@@ -13,6 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector("#name-usage-languages").innerHTML = "";
         fetchAgify(e.target["name-search"].value)
         fetchBehindName(e.target["name-search"].value)
+        
+        audio.play();
+        
     });
 });
 

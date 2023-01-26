@@ -14,6 +14,7 @@
     display: grid;
     align-items: center;
     justify-content: center;
+    background-color: white;
   }
   
   .logo {
@@ -24,7 +25,7 @@
   .name-information-cards-container {
     width: 100%;
   }
-  
+
   #about-the-app {
     width: 300px;
     display: flex;
@@ -40,15 +41,18 @@
     display: flex;
     border-left: 2px solid #000000;
     border-right: 2px solid #000000;
-    border-bottom: 1px solid #000000;
+    border-bottom: 2px solid #000000;
   }
 
   .name-information-cards {
     width: 300px;
-    border: 1px solid #000000;
+    border-top: 1px solid #000000;
+    border-left: 2px solid #000000;
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #000000;
     border-radius: 1px;
-    text-align: left;
-    background-color: white;
+    text-align: center;
+    background-color: rgb(255, 217, 0);
   }
   
   .image {
@@ -57,7 +61,7 @@
   }
   
   .title {
-    text-align: left;
+    text-align: center;
     padding: 15px 10px;
     font-size: 0.9rem;
     font-weight: 600;
@@ -85,7 +89,7 @@
   
   .name-search-input {
     width: 83%;
-    border: none;
+    border: 1 px;
     font-size: 0.8rem;
   }
   
@@ -94,18 +98,35 @@
   }
   
   .search-button {
+    color: rgb(127, 146, 250);
+    font-weight: bold;
     border: none;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: rgb(92, 114, 238);
+    width: 162px;
+    height: 51px;
+    margin: auto;
+    margin-top: 10px;
     cursor: pointer;
-    transition: color 300ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: 0 0;
+    /* text-transform: uppercase; */
+    font-family: montserrat-semibold;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
   }
-  
+
   .search-button:hover {
-    color: rgb(37, 68, 245);
+    color: purple;
+    border: 3px solid ;
   }
-  
+
   .search-button:active {
     color: rgb(127, 146, 250);
   }
@@ -117,3 +138,16 @@
   .hide {
     display:none;
   }
+
+  #name-usage-languages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .api-data {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: purple;
+  }
+
