@@ -7,6 +7,7 @@ const predictedAgeSentence = document.querySelector("#predicted-age-sentence");
 const behindNameDiv = document.querySelector(".hide");
 const behindNameShow = document.querySelector(".name-information-cards");
 const audio = document.querySelector("audio");
+const aboutme = document.querySelector("aboutme")
 
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('form').addEventListener('submit', (e) => {
@@ -26,6 +27,14 @@ document.addEventListener("DOMContentLoaded", () => {
         if (behindNameDiv.className === "hide") {
             behindNameDiv.className = "name-information-cards-container"
     }}
+
+document.addEventListener("mouseover", () => {
+      console.log("mouseover")
+
+
+        });
+
+
 
 
  function fetchAgify(submittedName) {
