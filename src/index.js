@@ -49,7 +49,7 @@ function renderAgify(data) {
 }
 
  function fetchBehindName(submittedName) {
-     fetch(`https://www.behindthename.com/api/lookup.json?name=${submittedName}&key=ju257858736`)
+     fetch(`https://www.behindthename.com/api/lookup.json?name=${submittedName}&key=to101934583`)
     .then(resp => resp.json())
     .then(data => renderBehindName(data))
  }
