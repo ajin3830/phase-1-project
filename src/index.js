@@ -7,15 +7,15 @@ const nameUsageLang = document.querySelector("#name-usage-languages");
 const hideCards = document.querySelector(".hide");
 const behindNameShow = document.querySelector(".name-information-cards");
 const audio = document.querySelector("audio");
-let aboutme = document.querySelector("h2");
+let aboutMe = document.querySelector("h2");
 let button = document.querySelector("button");
 
-aboutme.addEventListener("mouseleave", () => {
-    aboutme.className = aboutme.className = "hide"
+aboutMe.addEventListener("mouseleave", () => {
+    aboutMe.className = aboutMe.className = "hide"
 });
 
 button.addEventListener("mouseover", () => {
-    aboutme.className = aboutme.className = "title"
+    aboutMe.className = aboutMe.className = "title"
 });  
 
 document.addEventListener("DOMContentLoaded", () => {

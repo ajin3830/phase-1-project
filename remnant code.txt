@@ -41,3 +41,9 @@ console.log(aboutme)
 
             console.log(usages)
         // usages.forEach( usage => usageLang.push(usage))
+
+  /* .facts li {
+    margin: 2px 0;
+    letter-spacing: 0.2px;
+    /* list-style-type: none; */
+  /* } */
