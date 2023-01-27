@@ -26,24 +26,6 @@
     width: 100%;
   }
 
-  #about-the-app {
-    width: 300px;
-    display: flex;
-    border-top: 2px solid #000000;
-    border-left: 2px solid #000000;
-    border-right: 2px solid #000000;
-    border-radius: 2px;
-    background-color: white;
-  }
-
-  #search-form {
-    width: 300px;
-    display: flex;
-    border-left: 2px solid #000000;
-    border-right: 2px solid #000000;
-    border-bottom: 2px solid #000000;
-  }
-
   .name-information-cards {
     width: 300px;
     border-top: 1px solid #000000;
@@ -140,6 +122,24 @@
   }
     .hideabout {
       display:none;
+  }
+
+  #about-the-app {
+    width: 300px;
+    display: flex;
+    border-top: 2px solid #000000;
+    border-left: 2px solid #000000;
+    border-right: 2px solid #000000;
+    border-radius: 2px;
+    background-color: white;
+  }
+
+  #search-form {
+    width: 300px;
+    display: flex;
+    border-left: 2px solid #000000;
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #000000;
   }
 
   #name-usage-languages {

@@ -1,67 +1,40 @@
 const searchedName = document.querySelector("#card-title");
 const predictedAge = document.querySelector("#age-prediction")
 const nameCount = document.querySelector("#name-count");
-const nameUsageLang = document.querySelector("#name-usage-languages");
 const predictedAgeSentence = document.querySelector("#predicted-age-sentence");
-//let displayDivs= false;
-const behindNameDiv = document.querySelector(".hide");
+const predictionsList = document.querySelector("#nationality-predictions-list");
+const nameUsageLang = document.querySelector("#name-usage-languages");
+const hideCards = document.querySelector(".hide");
 const behindNameShow = document.querySelector(".name-information-cards");
 const audio = document.querySelector("audio");
 let aboutme = document.querySelector("h2");
-let button = document.querySelector("button")
-
-
-// if(showbutton = showbutton) {
-//     showbutton = !showbutton
-//    }
-
+let button = document.querySelector("button");
 
 aboutme.addEventListener("mouseleave", () => {
     aboutme.className = aboutme.className = "hide"
-})
+});
 
-
-   button.addEventListener("mouseover", () => {
-        aboutme.className = aboutme.className = "title"
-  
-
-console.log(aboutme)
-
-   //console.log(showbutton)
-
-
-
+button.addEventListener("mouseover", () => {
+    aboutme.className = aboutme.className = "title"
 });  
-
-    
-
 
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('form').addEventListener('submit', (e) => {
         e.preventDefault();
         document.querySelector("#name-usage-languages").innerHTML = "";
-        fetchAgify(e.target["name-search"].value)
-        fetchBehindName(e.target["name-search"].value)
-        
+        document.querySelector("#nationality-predictions-list").innerHTML = "";
         audio.play();
-    
-        
-
-
+        fetchAgify(e.target["name-search"].value);
+        fetchBehindName(e.target["name-search"].value);
+        fetchNationalize(e.target["name-search"].value);
     });
 });
 
-    function displayBehindTheName() {  
-        console.log(behindNameDiv)
-        console.log(behindNameShow)
-        if (behindNameDiv.className === "hide") {
-            behindNameDiv.className = "name-information-cards-container"
-    }}
-
-
-
-
-
+function displayNameInformationCards() {  
+    if (hideCards.className === "hide") {
+        hideCards.className = "name-information-cards-container"
+    };
+};
 
  function fetchAgify(submittedName) {
     fetch(`https://api.agify.io?name=${submittedName}`)
@@ -72,15 +45,29 @@ document.addEventListener("DOMContentLoaded", () => {
  }
   
 function renderAgify(data) {
-    
-    // const predictedAge = document.querySelector("#facts-list > li:nth-child(1)")
-    searchedName.textContent = data.name
-    predictedAge.textContent = data.age
-    nameCount.textContent = data.count
-    // console.log(searchedName)
-    // console.log(predictedAge)
-    console.log(nameCount)
-    // console.log(data)
+    searchedName.textContent = data.name;
+    predictedAge.textContent = data.age;
+    nameCount.textContent = data.count;
+}
+
+function fetchNationalize(submittedName) {
+    fetch(`https://api.nationalize.io?name=${submittedName}`)
+    .then(response => response.json())
+    .then(data => renderNationalize(data))
+}
+
+function renderNationalize(data) {
+    const countries = data.country;
+    function toPercent(number, float) {
+        let percent = parseFloat(number * 100).toFixed(float) + "%";
+        return percent;
+    };
+    countries.forEach(country => {
+                const probability = country.probability;
+                const li = document.createElement('li');
+                li.textContent = ('Country: ' + country.country_id + '; Probabability: ' + (toPercent(probability, 2)));
+                predictionsList.appendChild(li);
+    });
 }
 
  function fetchBehindName(submittedName) {
@@ -90,50 +77,18 @@ function renderAgify(data) {
  }
 
  function renderBehindName(data) {
-    // let usageLang = []
-    //newDiv = document.createElement('div')
-    //layout.appendChild(newDiv)
     data.forEach( name => {
         const usages = name.usages.map(usage => usage.usage_full)
-        console.log(usages)
-        // usages.forEach( usage => usageLang.push(usage))
         usages.forEach(usage => {
-            const li = document.createElement('li')
-            li.textContent = usage
-            nameUsageLang.appendChild(li)
-        })
+            const li = document.createElement('li');
+            li.textContent = usage;
+            nameUsageLang.appendChild(li);
+        });
 
-    })
-    displayBehindTheName()
+    });
+    displayNameInformationCards();
 }       
 
-
-        // function renderLangList(usageLang) {
-        //     // console.log(usageLang)
-        //     usageLang.forEach( language => {
-        //     })
-        // }
-        // renderLangList(usageLang)
-
-    
-    // console.log(usageLang)
-
-
-    // console.log()
-    // function usageLangToList(usageLang) {
-    //     console.log(usageLangToList())
-    // }
-
-// function renderBehindName(data) {
-    
-//     data.forEach(name => usageLang.push(usage.usage_full))
-//     console.log()
-// }
-
-// language, gender inside a table using iteration
-// array1: name male
-// array2: name female
-// array3: name 
 
 
 

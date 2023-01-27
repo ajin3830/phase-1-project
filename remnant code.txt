@@ -1,0 +1,43 @@
+console.log(aboutme)
+
+// if(showbutton = showbutton) {
+//     showbutton = !showbutton
+//    }
+
+    console.log(nameCount)
+
+    // const predictedAge = document.querySelector("#facts-list > li:nth-child(1)")
+
+        // function renderLangList(usageLang) {
+        //     // console.log(usageLang)
+        //     usageLang.forEach( language => {
+        //     })
+        // }
+        // renderLangList(usageLang)
+
+    
+    // console.log(usageLang)
+
+
+    // console.log()
+    // function usageLangToList(usageLang) {
+    //     console.log(usageLangToList())
+    // }
+
+// function renderBehindName(data) {
+    
+//     data.forEach(name => usageLang.push(usage.usage_full))
+//     console.log()
+// }
+
+// language, gender inside a table using iteration
+// array1: name male
+// array2: name female
+// array3: name 
+
+    // let usageLang = []
+    //newDiv = document.createElement('div')
+    //layout.appendChild(newDiv)
+
+            console.log(usages)
+        // usages.forEach( usage => usageLang.push(usage))
