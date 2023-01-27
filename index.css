@@ -138,6 +138,9 @@
   .hide {
     display:none;
   }
+    .hideabout {
+      display:none;
+  }
 
   #name-usage-languages {
     list-style-type: none;

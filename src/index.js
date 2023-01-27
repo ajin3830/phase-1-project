@@ -7,7 +7,34 @@ const predictedAgeSentence = document.querySelector("#predicted-age-sentence");
 const behindNameDiv = document.querySelector(".hide");
 const behindNameShow = document.querySelector(".name-information-cards");
 const audio = document.querySelector("audio");
-const aboutme = document.querySelector("aboutme")
+let aboutme = document.querySelector("h2");
+let button = document.querySelector("button")
+
+
+// if(showbutton = showbutton) {
+//     showbutton = !showbutton
+//    }
+
+
+aboutme.addEventListener("mouseleave", () => {
+    aboutme.className = aboutme.className = "hide"
+})
+
+
+   button.addEventListener("mouseover", () => {
+        aboutme.className = aboutme.className = "title"
+  
+
+console.log(aboutme)
+
+   //console.log(showbutton)
+
+
+
+});  
+
+    
+
 
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('form').addEventListener('submit', (e) => {
@@ -17,7 +44,10 @@ document.addEventListener("DOMContentLoaded", () => {
         fetchBehindName(e.target["name-search"].value)
         
         audio.play();
+    
         
+
+
     });
 });
 
@@ -28,11 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
             behindNameDiv.className = "name-information-cards-container"
     }}
 
-document.addEventListener("mouseover", () => {
-      console.log("mouseover")
 
-
-        });
 
 
 
